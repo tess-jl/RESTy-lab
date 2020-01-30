@@ -16,14 +16,24 @@ export default class RESTy extends Component {
 
   }
 
+
+
+
+
   handleSubmit = event => {
     event.preventDefault(); 
-    this.setState(state => {
+
+
+    this.setState(state => ({
       list: [...state.list, {
         url: state.url, 
-        rawJSONBody: state.rawJSONBody
-      }];
-    }); 
+        rawJSONBody: state.rawJSONBody, 
+        username: state.username, 
+        password: state.password, 
+        bearerToken: state.bearerToken, 
+        method: state.method
+      }]
+    })); 
   };
 
   handleChange = ({ target }) => {
@@ -50,6 +60,10 @@ export default class RESTy extends Component {
   
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
+        />
+
+        <List 
+          list={this.state.list}
         />
 
         <Footer />
