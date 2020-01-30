@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import RestyForm from '../components/Form/Form.js';
 import List from '../components/List/List.js';
+import Header from '../components/Header/Header.js';
+import Footer from '../components/Footer/Footer.js';
 
 export default class RESTy extends Component {
   state = {
@@ -38,6 +40,7 @@ export default class RESTy extends Component {
 
     return (
       <>
+        <Header />
         <RestyForm 
           url={url}
           rawJSONBody={rawJSONBody}
@@ -49,8 +52,7 @@ export default class RESTy extends Component {
           onChange={this.handleChange}
         />
 
-      
-
+        <Footer />
       </> 
     );
   }

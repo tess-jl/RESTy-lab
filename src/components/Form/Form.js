@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const restyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, bearerToken }) => (
+const RestyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, bearerToken }) => (
   <form onSubmit={onSubmit}>
     <input type="text" name="url" placeholder="url" value={url} onChange={onChange}/>
 
@@ -30,7 +30,7 @@ const restyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, b
   </form> 
 );
 
-restyForm.propTypes = {
+RestyForm.propTypes = {
   onSubmit: PropTypes.func.isRequired, 
   onChange: PropTypes.func.isRequired, 
   url: PropTypes.string.isRequired, 
@@ -40,4 +40,4 @@ restyForm.propTypes = {
   bearerToken: PropTypes.string.isRequired
 };
 
-export default restyForm; 
+export default RestyForm; 
