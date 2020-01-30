@@ -18,7 +18,7 @@ const restyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, b
 
     <button>Go!</button>
     
-    <textarea name="rawJSONBody" value={rawJSONBody} onChange={onChange}></textarea>
+    <textarea name="rawJSONBody" placeholder="Raw JSON Body" value={rawJSONBody} onChange={onChange}></textarea>
 
     <button>Headers</button>
     <h2>Basic Authorization</h2>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem.js';
 
 const List = ({ listItem }) => {
-  const listItems = listItems.map((item, i) => (
+  const list = list.map((item, i) => (
     <li key={i}>
       <ListItem listItem={listItem} />
     </li>
@@ -11,7 +11,7 @@ const List = ({ listItem }) => {
 
 }; 
 
-List.PropTypes = {
+List.propTypes = {
   listItem: PropTypes.object.isRequired
 };
 
