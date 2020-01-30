@@ -13,7 +13,10 @@ const restyForm = ({ onSubmit, url, onChange, rawJSONBody }) => (
 );
 
 restyForm.PropTypes = {
-
+  onSubmit: PropTypes.func.isRequired, 
+  onChange: PropTypes.func.isRequired, 
+  url: PropTypes.string.isRequired, 
+  rawJSONBody: PropTypes.string.isRequired
 };
 
 export default restyForm; 
