@@ -18,12 +18,14 @@ const restyForm = ({ onSubmit, url, onChange, rawJSONBody }) => (
     
     <textarea name="rawJSONBody" value={rawJSONBody} onChange={onChange}></textarea>
 
+    <button>Go!</button>
+
 
 
   </form> 
 );
 
-restyForm.PropTypes = {
+restyForm.propTypes = {
   onSubmit: PropTypes.func.isRequired, 
   onChange: PropTypes.func.isRequired, 
   url: PropTypes.string.isRequired, 
@@ -31,5 +33,3 @@ restyForm.PropTypes = {
 };
 
 export default restyForm; 
-
-  //  /* <RadioButton />  *
