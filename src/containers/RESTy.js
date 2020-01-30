@@ -5,6 +5,9 @@ export default class RESTy extends Component {
   state = {
     url: '', 
     rawJSONBody: '', 
+    username: '', 
+    password: '', 
+    bearerToken: '',
     listItems: []
 
   }
@@ -24,7 +27,7 @@ export default class RESTy extends Component {
   };
 
   render() {
-    const { url, rawJSONBody, listItems } = this.state; 
+    const { url, rawJSONBody, username, password, bearerToken, listItems} = this.state; 
 
     return (
       <>
