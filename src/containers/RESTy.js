@@ -10,17 +10,17 @@ export default class RESTy extends Component {
   }
 
   handleSubmit = event => {
-    this.preventDefault(); 
+    event.preventDefault(); 
     this.setState(state => {
       listItems: [...state.listItems, {
         url: state.url, 
         rawJSONBody: state.rawJSONBody
-      }]
+      }];
     }); 
   };
 
   handleChange = ({ target }) => {
-    return this.setState([target.name]: target.value ); 
+    return this.setState({ [target.name]: target.value }); 
   };
 
   render() {
@@ -34,7 +34,7 @@ export default class RESTy extends Component {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
         />
-        
+
       </> 
     )
   }
