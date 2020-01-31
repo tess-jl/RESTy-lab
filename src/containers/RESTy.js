@@ -32,7 +32,20 @@ export default class RESTy extends Component {
       }]
     })); 
 
-    fetch(this.state.url)
+    let headers; 
+    let body; 
+    if(this.state.method !== 'GET') {
+      headers = {
+        'Content-Type': 'application/json'
+      };
+      body = this.state.rawJSONBody;
+    } 
+
+    fetch(this.state.url, {
+      method: this.state.method, 
+      headers, 
+      body
+    })
       .then(res => res.json())
       .then(res => this.setState({ responseBody: JSON.stringify(res, null, 2) }));
   };
