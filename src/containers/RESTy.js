@@ -12,17 +12,15 @@ export default class RESTy extends Component {
     password: '', 
     bearerToken: '',
     method: '',
-    list: []
-
+    list: [], 
+    responseBody: ''
   }
 
-
-
+ 
 
 
   handleSubmit = event => {
     event.preventDefault(); 
-
 
     this.setState(state => ({
       list: [...state.list, {
@@ -34,6 +32,12 @@ export default class RESTy extends Component {
         method: state.method
       }]
     })); 
+
+    fetch(this.state.url)
+    //parce json
+      .then(res => res.json())
+      //
+      .then(res => res.setState({ }))
   };
 
   handleChange = ({ target }) => {
@@ -63,7 +67,7 @@ export default class RESTy extends Component {
         />
 
         <List 
-          list={this.state.list}
+          list={list}
         />
 
         <Footer />
