@@ -3,6 +3,7 @@ import RestyForm from '../components/Form/Form.js';
 import List from '../components/List/List.js';
 import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
+import Result from '../components/Result/Result.js';
 
 export default class RESTy extends Component {
   state = {
@@ -15,8 +16,6 @@ export default class RESTy extends Component {
     list: [], 
     responseBody: ''
   }
-
- 
 
 
   handleSubmit = event => {
@@ -34,10 +33,8 @@ export default class RESTy extends Component {
     })); 
 
     fetch(this.state.url)
-    //parce json
       .then(res => res.json())
-      //
-      .then(res => res.setState({ }))
+      .then(res => this.setState({ responseBody: JSON.stringify(res, null, 2) }));
   };
 
   handleChange = ({ target }) => {
@@ -50,7 +47,7 @@ export default class RESTy extends Component {
   };
 
   render() {
-    const { url, rawJSONBody, username, password, bearerToken, list } = this.state; 
+    const { url, rawJSONBody, username, password, bearerToken, list, responseBody } = this.state; 
 
     return (
       <>
@@ -65,6 +62,8 @@ export default class RESTy extends Component {
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
         />
+
+        <Result responseBody={responseBody}/>
 
         <List 
           list={list}
