@@ -36,7 +36,8 @@ export default class RESTy extends Component {
     let body; 
     if(this.state.method !== 'GET') {
       headers = {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.state.bearerToken}`
       };
       body = this.state.rawJSONBody;
     } 

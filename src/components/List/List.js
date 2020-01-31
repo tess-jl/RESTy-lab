@@ -17,7 +17,6 @@ const List = ({ list, onClick }) => {
       </ul>
     </>
   );
-
 }; 
 
 List.propTypes = {
