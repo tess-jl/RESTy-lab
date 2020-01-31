@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem.js';
 
-const List = ({ list }) => {
+const List = ({ list, onClick }) => {
   const listForPresentation = list.map((listItem, i) => (
     <li key={i}>
-      <ListItem listItem={listItem} />
+      <ListItem listItem={listItem} onClick={onClick} />
     </li>
   ));
 
@@ -28,7 +28,8 @@ List.propTypes = {
     password: PropTypes.string.isRequired, 
     bearerToken: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired
-  })).isRequired
+  })).isRequired, 
+  onClick: PropTypes.func.isRequired
 };
 
 export default List; 

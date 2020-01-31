@@ -59,6 +59,11 @@ export default class RESTy extends Component {
     }
   };
 
+  handleClick = (listItem) => {
+    this.setState(() => ({ url: listItem.url, method: listItem.method, rawJSONBody: listItem.rawJSONBody }));
+
+  }; 
+
   render() {
     const { url, rawJSONBody, username, password, bearerToken, list, responseBody } = this.state; 
 
@@ -80,6 +85,7 @@ export default class RESTy extends Component {
 
         <List 
           list={list}
+          onClick={this.handleClick}
         />
 
         <Footer />
