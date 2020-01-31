@@ -65,7 +65,7 @@ export default class RESTy extends Component {
   }; 
 
   render() {
-    const { url, rawJSONBody, username, password, bearerToken, list, responseBody } = this.state; 
+    const { url, rawJSONBody, username, password, bearerToken, list, responseBody, method } = this.state; 
 
     return (
       <>
@@ -76,6 +76,7 @@ export default class RESTy extends Component {
           username={username}
           password={password}
           bearerToken={bearerToken}
+          method={method}
   
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}

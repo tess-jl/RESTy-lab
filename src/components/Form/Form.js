@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RestyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, bearerToken }) => (
+const RestyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, bearerToken, method }) => (
   <form onSubmit={onSubmit}>
     <input type="text" name="url" placeholder="url" value={url} onChange={onChange}/>
 
     <label htmlFor="getMethod">GET</label>
-    <input type="radio" value="GET" name="method" onChange={onChange}></input>
+    <input type="radio" value="GET" name="method" onChange={onChange} checked={ method === 'GET'} ></input>
     <label htmlFor="postMethod">POST</label>
-    <input type="radio" value="POST" name="method" onChange={onChange}></input>
+    <input type="radio" value="POST" name="method" onChange={onChange} checked={ method === 'POST'} ></input>
     <label htmlFor="putMethod">PUT</label>
-    <input type="radio" value="PUT" name="method" onChange={onChange}></input>
+    <input type="radio" value="PUT" name="method" onChange={onChange} checked={ method === 'PUT'} ></input>
     <label htmlFor="patchMethod">PATCH</label>
-    <input type="radio" value="PATCH" name="method" onChange={onChange}></input>
+    <input type="radio" value="PATCH" name="method" onChange={onChange} checked={ method === 'PATCH'} ></input>
     <label htmlFor="deleteMethod">DELETE</label>
-    <input type="radio" value="DELETE" name="method" onChange={onChange}></input>
+    <input type="radio" value="DELETE" name="method" onChange={onChange} checked={ method === 'DELETE'} ></input>
 
     <button>Go!</button>
     
@@ -37,7 +37,8 @@ RestyForm.propTypes = {
   rawJSONBody: PropTypes.string.isRequired, 
   username: PropTypes.string.isRequired, 
   password: PropTypes.string.isRequired, 
-  bearerToken: PropTypes.string.isRequired
+  bearerToken: PropTypes.string.isRequired, 
+  method: PropTypes.string.isRequired
 };
 
 export default RestyForm; 
