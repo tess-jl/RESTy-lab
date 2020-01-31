@@ -6,15 +6,15 @@ const RestyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, b
     <input type="text" name="url" placeholder="url" value={url} onChange={onChange}/>
 
     <label htmlFor="getMethod">GET</label>
-    <input type="radio" id="GET" name="method" onChange={onChange}></input>
+    <input type="radio" value="GET" name="method" onChange={onChange}></input>
     <label htmlFor="postMethod">POST</label>
-    <input type="radio" id="POST" name="method" onChange={onChange}></input>
+    <input type="radio" value="POST" name="method" onChange={onChange}></input>
     <label htmlFor="putMethod">PUT</label>
-    <input type="radio" id="PUT" name="method" onChange={onChange}></input>
+    <input type="radio" value="PUT" name="method" onChange={onChange}></input>
     <label htmlFor="patchMethod">PATCH</label>
-    <input type="radio" id="PATCH" name="method" onChange={onChange}></input>
+    <input type="radio" value="PATCH" name="method" onChange={onChange}></input>
     <label htmlFor="deleteMethod">DELETE</label>
-    <input type="radio" id="DELETE" name="method" onChange={onChange}></input>
+    <input type="radio" value="DELETE" name="method" onChange={onChange}></input>
 
     <button>Go!</button>
     

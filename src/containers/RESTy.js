@@ -52,7 +52,7 @@ export default class RESTy extends Component {
 
   handleChange = ({ target }) => {
     if(target.type === 'radio') {
-      this.setState({ [target.name]: target.id });
+      this.setState({ [target.name]: target.value });
     }
     else {
       this.setState({ [target.name]: target.value });
