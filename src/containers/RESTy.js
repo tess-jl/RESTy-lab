@@ -25,8 +25,10 @@ export default class RESTy extends Component {
       headers: methodsWithBody.includes(this.state.method) ? { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.state.bearerToken}` } : {},
       body: methodsWithBody.includes(this.state.method) ? this.state.rawJSONBody : null
     })
-      .then(res => res.json())
-      .catch();
+      .then(res => {
+        if(res.ok) return res.json(); 
+        throw `Response: ${res.status}`;
+      });
   };
 
 
@@ -44,7 +46,8 @@ export default class RESTy extends Component {
           bearerToken: state.bearerToken, 
           method: state.method
         }]
-      })));
+      })))
+      .catch(err => console.log(err));
   };
 
   handleChange = ({ target }) => {
@@ -90,6 +93,4 @@ export default class RESTy extends Component {
     );
   }
 }
-
-{/* <List list={list} /> */}
 
