@@ -4,8 +4,8 @@ import List from '../components/List/List.js';
 import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
 import Result from '../components/Result/Result.js';
+import { fetchWithError } from '../services/fetchWithError.js'; 
 
-const methodsWithBody = ['POST', 'PUT', 'PATCH'];
 
 export default class RESTy extends Component {
   state = {
@@ -19,23 +19,11 @@ export default class RESTy extends Component {
     responseBody: ''
   }
 
-  fetchWithError = () => {
-    return fetch(this.state.url, { 
-      method: this.state.method,
-      headers: methodsWithBody.includes(this.state.method) ? { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.state.bearerToken}` } : {},
-      body: methodsWithBody.includes(this.state.method) ? this.state.rawJSONBody : null
-    })
-      .then(res => {
-        if(res.ok) return res.json(); 
-        throw `Response: ${res.status}`;
-      });
-  };
-
 
   handleSubmit = event => {
     event.preventDefault(); 
 
-    this.fetchWithError()
+    return fetchWithError(this.state.url, this.state.method, this.state.rawJSONBody, this.state.bearerToken)
       .then(res => this.setState(state => ({
         responseBody: JSON.stringify(res, null, 2),
         list: [...state.list, {

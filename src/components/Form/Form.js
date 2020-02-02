@@ -5,15 +5,15 @@ const RestyForm = ({ onSubmit, url, onChange, rawJSONBody, username, password, b
   <form onSubmit={onSubmit}>
     <input type="text" name="url" placeholder="url" value={url} onChange={onChange}/>
 
-    <label htmlFor="getMethod">GET</label>
+    <label htmlFor="GET">GET</label>
     <input type="radio" value="GET" name="method" onChange={onChange} checked={ method === 'GET'} ></input>
-    <label htmlFor="postMethod">POST</label>
+    <label htmlFor="POST">POST</label>
     <input type="radio" value="POST" name="method" onChange={onChange} checked={ method === 'POST'} ></input>
-    <label htmlFor="putMethod">PUT</label>
+    <label htmlFor="PUT">PUT</label>
     <input type="radio" value="PUT" name="method" onChange={onChange} checked={ method === 'PUT'} ></input>
-    <label htmlFor="patchMethod">PATCH</label>
+    <label htmlFor="PATCH">PATCH</label>
     <input type="radio" value="PATCH" name="method" onChange={onChange} checked={ method === 'PATCH'} ></input>
-    <label htmlFor="deleteMethod">DELETE</label>
+    <label htmlFor="DELETE">DELETE</label>
     <input type="radio" value="DELETE" name="method" onChange={onChange} checked={ method === 'DELETE'} ></input>
 
     <button>Go!</button>
