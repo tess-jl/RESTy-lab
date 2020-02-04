@@ -1,7 +1,10 @@
 import React from 'react';
+import styles from './Header.css';
 
 const Header = () => (
-  <h1>RESTy</h1>
+  <div className={styles.Header}>
+    <h1>PostPerson</h1>
+  </div>
 );
 
 export default Header; 
