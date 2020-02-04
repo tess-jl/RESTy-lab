@@ -1,0 +1,8 @@
+.Main {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  height: 90vh; 
+  margin: 1em; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+}

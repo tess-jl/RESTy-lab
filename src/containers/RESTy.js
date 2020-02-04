@@ -5,6 +5,7 @@ import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
 import Result from '../components/Result/Result.js';
 import { fetchWithError } from '../services/fetchWithError.js'; 
+import styles from './RESTy.css';
 
 
 export default class RESTy extends Component {
@@ -57,24 +58,31 @@ export default class RESTy extends Component {
     return (
       <>
         <Header />
-        <RestyForm 
-          url={url}
-          rawJSONBody={rawJSONBody}
-          username={username}
-          password={password}
-          bearerToken={bearerToken}
-          method={method}
-  
-          onSubmit={this.handleSubmit}
-          onChange={this.handleChange}
-        />
+        <main className={styles.Main}>
+          <div>
+            <List 
+              list={list}
+              onClick={this.handleClick}
+            />
+          </div>
 
-        <Result responseBody={responseBody}/>
 
-        <List 
-          list={list}
-          onClick={this.handleClick}
-        />
+          <div className={styles.Right}>
+            <RestyForm 
+              url={url}
+              rawJSONBody={rawJSONBody}
+              username={username}
+              password={password}
+              bearerToken={bearerToken}
+              method={method}
+      
+              onSubmit={this.handleSubmit}
+              onChange={this.handleChange}
+            />
+            <Result responseBody={responseBody}/>
+          </div>
+
+        </main>
 
         <Footer />
       </> 

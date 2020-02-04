@@ -1,0 +1,17 @@
+.Form {
+
+  .UserInput {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .RadioButtons {
+  label {
+    margin: 5px; 
+  }
+  input[type='radio'] {
+    display: none; 
+  }
+  }
+
+}
